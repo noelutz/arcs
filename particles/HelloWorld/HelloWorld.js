@@ -19,20 +19,23 @@ defineParticle(({DomParticle}) => {
     <style>
       [hello] {
         font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-        font-size: 12px;
-        background-color: #ffca66;
+        font-size: 14px;
+        background-color: #AED581;
         padding: 20px;
       }
     </style>
     <div hello>
       <!-- Basic variable substitution where {{name}} will be replaced
            by the value associated with 'name' when  the particle is
-           rendered. -->
-      <div>Hello, World! Hello, {{name}}!</div>
+           rendered. Note that the span is necessary here because (for now)
+           variable substitution only works if the variable is a
+           lonely child of an element. -->
+      <div>Hello, World! Hello, <span>{{name}}</span>!
       <!-- Defines where and how the 'greeting' slot should be rendered
            in the HelloWorld particle DOM. Another particle may render
            content in that slot. -->
-      <div slotid="greeting"></div>
+        <span slotid="greeting"></span>
+      </div>
     </div>
   `.trim();
 
@@ -40,7 +43,7 @@ defineParticle(({DomParticle}) => {
   // HelloWorld may be speculatively instantiated by Arcs and will
   // be (definitely) created when the user picks the Hello World
   // suggestion.
-  return class HelloWorld extends DomParticle {
+  return class extends DomParticle {
     get template() {
       return template;
     }

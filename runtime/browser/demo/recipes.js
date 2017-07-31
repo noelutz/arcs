@@ -160,6 +160,12 @@ let recipes = [
   name: "Hello, World!",
   particles: [
     {
+      name: "Greeting",
+      constrain: {
+        "person": "person"
+      }
+    },
+    {
       name: "HelloWorld",
       constrain: {
         "person": "person"
