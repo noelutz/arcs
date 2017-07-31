@@ -154,7 +154,26 @@ let recipes = [
 {
   name: "Profit",
   particles: []
+},
+
+{
+  name: "Hello, World!",
+  particles: [
+    {
+      name: "Choose",
+      constrain: {
+        "singleton": "person"
+      }
+    },
+    {
+      name: "HelloWorld",
+      constrain: {
+        "person": "person"
+      }
+    }
+  ]
 }
+
 ];
 
 module.exports = recipes;

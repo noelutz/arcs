@@ -24,7 +24,8 @@ let stages = [{
   recipes: [
     recipes[0],
     recipes[1],
-    recipes[2]
+    recipes[2],
+    recipes[7]
   ]
 }, {
   recipes: [
