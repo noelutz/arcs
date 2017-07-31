@@ -20,7 +20,8 @@ defineParticle(({DomParticle}) => {
       [hello] {
         font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
         font-size: 12px;
-        background-color: #ffca66
+        background-color: #ffca66;
+        padding: 20px;
       }
     </style>
     <div hello>
@@ -32,7 +33,7 @@ defineParticle(({DomParticle}) => {
            in the HelloWorld particle DOM. Another particle may render
            content in that slot. -->
       <div slotid="greeting"></div>
-    </div>;
+    </div>
   `.trim();
 
   // Defines the HelloWorld particle as a sub-class of DomParticle.
@@ -46,7 +47,9 @@ defineParticle(({DomParticle}) => {
     _willReceiveProps(props) {
       // Copies the name from the input view (i.e., particle input parameter) to
       // the particle's internal state.
-      this._setState({ name: props.name });
+      if (props.person) {
+        this._setState({ name: props.person.name });
+      }
     }
     // Main rendering function called whenever the state of the particle changed.
     // Returns the dictionary that is used to do variable substitution in the
@@ -54,9 +57,9 @@ defineParticle(({DomParticle}) => {
     // person to greet.
     _render(props, state) {
       if (state.name && state.name.length) {
-	return {
-	  name: state.name
-	};
+      	return {
+      	  name: state.name
+      	};
       }
     }
   };
