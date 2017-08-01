@@ -33,9 +33,11 @@ defineParticle(({DomParticle}) => {
     get template() {
       return template;
     }
-    // Rather than copying the props to the particle state and rendering data
-    // from its state (as in HelloWorld.js), this particle renders data from
-    // props directly.
+
+    // Render gets called whenever props change or _setState() gets called.
+    // Rather than copying the name into the particle's state (as in
+    // HelloWorld.js) we skip that step and render the name from the props
+    // directly to keep things simpler.
     _render(props, state) {
       if (props.person && props.person.name.length) {
         let name = props.person.name;

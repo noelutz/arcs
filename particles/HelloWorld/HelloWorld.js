@@ -30,10 +30,13 @@ defineParticle(({DomParticle}) => {
            rendered. Note that the span is necessary here because (for now)
            variable substitution only works if the variable is a
            lonely child of an element. -->
-      <div>Hello, World! Hello, <span>{{name}}</span>!
-      <!-- Defines where and how the 'greeting' slot should be rendered
-           in the HelloWorld particle DOM. Another particle may render
-           content in that slot. -->
+      <div>
+        Hello, World! Hello,
+        <span>{{name}}</span>!
+        <!-- Defines where and how the 'greeting' slot should be rendered
+             in the HelloWorld particle DOM. Another particle may render
+             content into that slot. In our example that's the Greeting
+             particle. -->
         <span slotid="greeting"></span>
       </div>
     </div>
