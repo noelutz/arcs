@@ -13,5 +13,5 @@ Greeting(in Person person)
 renders: greeting none-need
 
 Description {
-  pattern: Greeting ${person}
+  pattern: Greetings to ${person}
 }

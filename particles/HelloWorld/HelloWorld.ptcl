@@ -14,5 +14,5 @@ renders: root none-need
 exposes: greeting
 
 Description {
-  pattern: Hello World ${person}
+  pattern: Hello World
 }
