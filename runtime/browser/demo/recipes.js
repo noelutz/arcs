@@ -157,7 +157,7 @@ let recipes = [
 },
 
 {
-  name: "Hello, World!",
+  name: "Hello, World! Hello, you!",
   particles: [
     {
       name: "Greeting",
