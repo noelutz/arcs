@@ -14,7 +14,12 @@
 defineParticle(({DomParticle}) => {
 
   let template = `
-    <span>You're <span>{{prefix}}</span>&nbsp;<span>{{animal}}</span>!</span>
+    <style>
+      [greeting] {
+        background-color: #FFF176;
+      }
+    </style>
+    <span greeting>You're <span>{{prefix}}</span>&nbsp;<span>{{animal}}</span>!</span>
   `.trim();
 
   let animals = {

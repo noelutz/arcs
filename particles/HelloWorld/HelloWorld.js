@@ -19,7 +19,7 @@ defineParticle(({DomParticle}) => {
     <style>
       [hello] {
         font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-        font-size: 14px;
+        font-size: 16px;
         background-color: #AED581;
         padding: 20px;
       }
