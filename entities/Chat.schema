@@ -1,6 +1,0 @@
-schema Chat extends Thing {
-  normative:
-    Text content;
-  optional:
-    Text type;
-}

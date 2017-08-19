@@ -42,12 +42,12 @@ defineParticle(({DomParticle}) => {
       return {message: ''};
     }
     _willReceiveProps(props) {
-      this._setState({
-        // TODO(noelutz): figure out why person isn't set properly when
-        // it's defined as a singleton.
-        me: props.me[0].name,
-        chats: props.chats,
-      });
+      if (props.me && props.me.name) {
+        this._setState({
+          me: props.me.name,
+          chats: props.chats,
+        });
+      }
     }
     _render(props, state) {
       if (state.chats) {

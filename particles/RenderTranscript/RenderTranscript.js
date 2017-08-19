@@ -86,6 +86,7 @@ defineParticle(({DomParticle}) => {
       </template>
     </x-list>
   </div>
+  <div slotid="compose"></div>  
   <x-list items="{{compose}}">
     <template>
       <div slotid$="{{slot}}"></div>   
@@ -99,12 +100,14 @@ defineParticle(({DomParticle}) => {
       return template;
     } 
     _willReceiveProps(props) {
-      // TODO(noelutz): figure out why person isn't set properly when
-      // it's defined as a singleton.
-      let me = props.me[0].name
+      if (!props.me || !props.me.name) {
+        return;
+      }
+      let me = props.me.name
 
       // Create new composition slots of a chat talks about a certain keyword.
-      let composeSlots = new Set(['compose']);
+      // TODO: why doesn't the compose slot work anymore?
+      let composeSlots = new Set(); //['compose']);
       props.chats.forEach(function(chat) {
         ['moustache', 'bro'].forEach(function(elt) {
           if (chat.content.toLowerCase().indexOf(elt) >= 0) {
